@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab6Web — JavaScript DOM & Event Handling</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">PRAKTIKUM 6 · PEMROGRAMAN WEB</p>
+      <h1>JavaScript DOM &amp; Event Handling</h1>
+      <p>Latihan manipulasi DOM, event listener, validasi form, dan interaksi pengguna.</p>
+      <div class="student">Nauvali Ajidan Pratama Putra <span>·</span> NIM 312510177 <span>·</span> Kelas I252A</div>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <section class="panel">
+      <h2>1. Manipulasi DOM</h2>
+      <h3 id="judul">Latihan DOM</h3>
+      <p id="pesan">Belum ada tindakan.</p>
+      <div class="actions">
+        <button id="tombolAksi" type="button">Klik Saya</button>
+        <button id="ubahJudul" class="secondary" type="button">Ubah teks</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>2. Mengubah kelas dan gaya</h2>
+      <p id="teksGaya">Klik tombol untuk mengubah gaya paragraf ini.</p>
+      <button id="tombolGaya" type="button">Toggle gaya</button>
+    </section>
+
+    <section class="panel">
+      <h2>3. Penghitung karakter</h2>
+      <label for="namaInput">Ketik nama atau teks (maksimal 40 karakter)</label>
+      <input type="text" id="namaInput" maxlength="40" placeholder="Tulis sesuatu...">
+      <p class="helper">Jumlah karakter: <strong id="jumlahKarakter">0</strong>/40</p>
+    </section>
+
+    <section class="panel">
+      <h2>4. Form pendaftaran workshop</h2>
+      <p class="muted">Nama minimal 3 karakter, email harus valid, dan sesi wajib dipilih.</p>
+      <form id="formPendaftaran" novalidate>
+        <label for="nama">Nama lengkap</label>
+        <input id="nama" name="nama" type="text" autocomplete="name" placeholder="Nama lengkap">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="nama@email.com">
+        <label for="sesi">Pilih sesi workshop</label>
+        <select id="sesi" name="sesi">
+          <option value="">-- Pilih sesi --</option>
+          <option value="Pagi (09.00–11.00)">Pagi (09.00–11.00)</option>
+          <option value="Siang (13.00–15.00)">Siang (13.00–15.00)</option>
+          <option value="Sore (15.30–17.30)">Sore (15.30–17.30)</option>
+        </select>
+        <p id="sesiDipilih" class="helper" aria-live="polite">Sesi yang dipilih akan tampil di sini.</p>
+        <button type="submit">Daftar workshop</button>
+        <button id="resetForm" class="secondary" type="button">Reset form</button>
+      </form>
+      <p id="pesanForm" class="feedback" aria-live="polite"></p>
+      <div id="ringkasan" class="summary" hidden></div>
+    </section>
+
+    <section class="panel">
+      <h2>5. Daftar tugas (To-do List)</h2>
+      <label for="inputTugas">Tugas baru</label>
+      <div class="inline-form">
+        <input id="inputTugas" type="text" placeholder="Contoh: Selesaikan laporan">
+        <button id="tambahTugas" type="button">Tambah</button>
+      </div>
+      <p id="pesanTugas" class="helper" aria-live="polite"></p>
+      <ul id="daftarTugas" class="todo-list"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>6. Tampilkan / sembunyikan paragraf</h2>
+      <p id="paragrafToggle">Paragraf ini dapat disembunyikan dan ditampilkan kembali menggunakan class CSS.</p>
+      <button id="toggleParagraf" type="button">Sembunyikan paragraf</button>
+    </section>
+
+    <section class="panel">
+      <h2>Ringkasan fitur</h2>
+      <ul class="feature-list">
+        <li>Memilih elemen dengan <code>getElementById()</code> dan selector DOM.</li>
+        <li>Mengubah teks dengan <code>textContent</code>.</li>
+        <li>Menangani <code>click</code>, <code>input</code>, <code>change</code>, dan <code>submit</code>.</li>
+        <li>Memvalidasi nama, email, dan pilihan sesi.</li>
+        <li>Menambah, menandai selesai, dan menghapus tugas.</li>
+      </ul>
+    </section>
+  </main>
+  <footer><div class="container">Lab6Web · Praktikum JavaScript DOM dan Event Handling</div></footer>
+</body>
+</html>
